@@ -1,0 +1,9 @@
+#!/bin/bash
+set -x
+
+export AWS_REGION='us-east-1'
+
+terraform apply -auto-approve -target=local_file.shared_config
+terraform plan -target=aws_iam_user.dummy
+
+# Error: <...> https response error StatusCode: 403

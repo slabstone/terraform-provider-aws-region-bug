@@ -1,0 +1,7 @@
+#!/bin/bash
+set -x
+
+terraform apply -auto-approve -target=local_file.shared_config
+terraform plan -target=aws_iam_user.dummy
+
+# Error: <...> failed to resolve service endpoint, an AWS region is required, but was not found
